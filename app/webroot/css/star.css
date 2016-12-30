@@ -1,0 +1,84 @@
+.nota {
+    list-style: none;
+    width: 28%;
+    height: 5%;
+    background-color: green;
+    background: linear-gradient(to left, black, #0099FF);
+    padding-right: 0.2%;
+    padding-top: 0.8%;
+    padding-left: 0%;
+    margin-left: 30%;
+
+}
+
+.nota li {
+    position: relative;
+    float: left;
+    margin: 0.07%;
+
+}
+
+.nota li a {
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+    font-family: Tahoma;
+    font-size: 90%;
+    color: white;
+}
+
+.nota li a:hover {
+    font-size: 100%;
+
+}
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+    border: none;
+    float: left;
+}
+
+.rating > input {
+    display: none;
+}
+
+.rating > label:before {
+    margin: 5px;
+    font-size: 2.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating > .half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating > label {
+    color: #ddd;
+    float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label {
+    color: #FFD700;
+}
+
+/* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+    color: #FFED85;
+}
+
+.star {
+    font-size: 2EM;
+    width: 50%;
+}
